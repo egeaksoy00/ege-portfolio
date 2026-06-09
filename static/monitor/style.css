@@ -761,3 +761,101 @@ h3 {
   text-decoration: none;
   font-family: "DM Mono", monospace;
 }
+
+.erasmus-card {
+  margin-top: 28px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 40%, rgba(141, 255, 203, 0.16), transparent 30%),
+    radial-gradient(circle at 80% 55%, rgba(122, 162, 255, 0.18), transparent 32%),
+    rgba(255, 255, 255, 0.035);
+}
+
+.erasmus-map {
+  position: relative;
+  height: 180px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.05), transparent),
+    repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.04),
+      rgba(255,255,255,0.04) 1px,
+      transparent 1px,
+      transparent 12px
+    );
+}
+
+.city {
+  position: absolute;
+  z-index: 2;
+  padding: 8px 11px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+}
+
+.city::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 18px var(--accent);
+}
+
+.ankara {
+  left: 18%;
+  bottom: 32%;
+}
+
+.carlow {
+  right: 16%;
+  top: 28%;
+}
+
+.route-line {
+  position: absolute;
+  left: 27%;
+  top: 48%;
+  width: 48%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  transform: rotate(-13deg);
+  box-shadow: 0 0 18px rgba(141, 255, 203, 0.35);
+}
+
+.route-line::after {
+  content: "✈";
+  position: absolute;
+  right: 42%;
+  top: -19px;
+  color: var(--accent);
+  font-size: 22px;
+}
+
+.erasmus-content {
+  padding: 24px;
+}
+
+.erasmus-label {
+  color: var(--accent);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.erasmus-content h3 {
+  margin: 12px 0 10px;
+}
+
+.erasmus-content p {
+  color: var(--muted);
+  line-height: 1.55;
+}
