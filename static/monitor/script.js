@@ -82,3 +82,77 @@ if (closeButton) {
   closeButton.style.cursor = "pointer";
   closeButton.addEventListener("click", showWelcome);
 }
+
+const terminalInput = document.getElementById("terminalInput");
+const terminalBox = document.getElementById("terminalBox");
+
+const commands = {
+  help: [
+    "Available commands:",
+    "about     → who is Ege?",
+    "projects  → show selected projects",
+    "skills    → show tech stack",
+    "contact   → show contact links",
+    "money     → run financial motivation protocol",
+    "clear     → clear terminal",
+  ],
+  about: [
+    "Ege Aksoy — Information Systems student at Bilkent University.",
+    "Focus: software engineering, automation, crypto systems, and networking.",
+  ],
+  projects: [
+    "01 Real-Time Opportunity Detector",
+    "02 Frontend Black Tile Game",
+    "03 Selenium-Cucumber Framework",
+    "04 DriveEase Car Rental System",
+  ],
+  skills: [
+    "Java · Python · JavaScript · HTML · CSS · C",
+    "Selenium · Maven · n8n · Power Automate · GitHub",
+  ],
+  contact: [
+    "Email: egeaksoy@ug.bilkent.edu.tr",
+    "GitHub: github.com/egeaksoy00",
+    "LinkedIn: linkedin.com/in/egeaksoy00",
+  ],
+  money: [
+    "Running money protocol...",
+    "Status: ambition detected.",
+    "Advice: build, ship, iterate, repeat.",
+  ],
+};
+
+function writeTerminalLine(text) {
+  if (!terminalBox) return;
+  const p = document.createElement("p");
+  p.textContent = text;
+  terminalBox.appendChild(p);
+  terminalBox.scrollTop = terminalBox.scrollHeight;
+}
+
+if (terminalInput && terminalBox) {
+  terminalInput.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter") return;
+
+    const command = terminalInput.value.trim().toLowerCase();
+    terminalInput.value = "";
+
+    if (!command) return;
+
+    writeTerminalLine(`ege@egeos:~$ ${command}`);
+
+    if (command === "clear") {
+      terminalBox.innerHTML = "";
+      return;
+    }
+
+    const response = commands[command];
+
+    if (response) {
+      response.forEach(writeTerminalLine);
+    } else {
+      writeTerminalLine(`Command not found: ${command}`);
+      writeTerminalLine("Type 'help' to see available commands.");
+    }
+  });
+}
