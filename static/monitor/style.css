@@ -675,3 +675,89 @@ h3 {
 .enter-os-button:hover {
   transform: translateY(-2px);
 }
+
+.terminal-box {
+  min-height: 280px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.38);
+  padding: 22px;
+  font-family: "DM Mono", monospace;
+  color: #d7ffe9;
+  overflow: auto;
+}
+
+.prompt {
+  color: var(--accent);
+  font-family: "DM Mono", monospace;
+}
+
+.terminal-input-row {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 12px 16px;
+}
+
+#terminalInput {
+  flex: 1;
+  background: transparent;
+  color: var(--text);
+  border: 0;
+  outline: none;
+  font-family: "DM Mono", monospace;
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.status-grid div {
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.status-grid span {
+  display: block;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.status-grid strong {
+  color: var(--accent);
+  font-family: "DM Mono", monospace;
+}
+
+.credits-content {
+  max-width: 850px;
+}
+
+.credits-content p {
+  color: #cbd3dd;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.credits-links {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.credits-links a {
+  padding: 13px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--accent);
+  text-decoration: none;
+  font-family: "DM Mono", monospace;
+}
