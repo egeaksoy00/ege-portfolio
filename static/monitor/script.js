@@ -76,7 +76,12 @@ function showWelcome() {
   });
 }
 
-const closeButton = document.querySelector(".traffic span:first-child");
+const closeButtons = document.querySelectorAll(".traffic span:first-child");
+
+closeButtons.forEach((closeButton) => {
+  closeButton.style.cursor = "pointer";
+  closeButton.addEventListener("click", showWelcome);
+});
 
 if (closeButton) {
   closeButton.style.cursor = "pointer";
